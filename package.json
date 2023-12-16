@@ -8,13 +8,12 @@
   },
   "license": "ISC",
   "author": "thiago barbosa",
-  "devDependencies": {
-    "mongoose": "^8.0.3",
-    "nodemon": "^3.0.2"
-  },
+  "devDependencies": {},
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "nodemon": "^3.0.2"
   }
 }
 
