@@ -9,17 +9,67 @@
     <title>To-Do List</title>
   </head>
   <body>
-    <form action="/cr" method="post">
-      <input type="text" name="task" id="task" placeholder="TAREFA..." />
-      <button id="addButton" type="submit">Adicionar</button>
-    </form>
+    <header>
+        <% if(task == null){ %>
 
-    <ul>
-      <% tasks.forEach((task)=>{ %>
-      <li>
-        <%= task.task %> | <%= task.date.toLocaleDateString('pt-BR') %>
-      </li>
-      <% })%>
-    </ul>
+        <form action="/cr" method="post">
+          <input type="text" name="task" id="task" placeholder="TAREFA..." />
+          <button id="addButton" type="submit">Adicionar</button>
+        </form>
+        <% } else { %>
+        <form action="/update/<%= task._id %>" method="post">
+          <input type="text" name="task" id="task" value="<%= task.task %>" />
+          <button id="addButton" type="submit">Atualizar</button>
+        </form>
+        <form action="/">
+          <button type="submit">Cancel</button>
+        </form>
+        <% } %>
+    </header>
+
+   
+    <section id="tasks">
+      <ul>
+        <% taskList.forEach((task)=>{ %> 
+            <% if(task.edited) { %>
+
+        <li>
+          <%= task.task %> | <%= task.date.toLocaleDateString('pt-BR') %>
+          Editado
+          <a href="/getID/<%= task._id %>/update">Edit</a>
+          <a href="/getID/<%= task._id %>/delete">Delete</a>
+        </li>
+
+        <% } else { %>
+
+        <li>
+          <%= task.task %> | <%= task.date.toLocaleDateString('pt-BR') %>
+          <a href="/getID/<%= task._id %>/update">Edit</a>
+          <a href="/getID/<%= task._id %>/delete">Delete</a>
+        </li>
+
+        <% } %>
+         <% }) %>
+      </ul>
+    </section>
+
+
+ <% if(taskDelete != null) {%>
+    <section id="modal">
+        <div id="card">
+
+            <a href="/">x</a>
+            <h2>Confirm</h2>
+            <hr>
+            <p>Quer Realmente DELETAR a Tarefa: <%= taskDelete.task %>?</p>
+
+            <a href="/">Não</a>
+            <a href="/deleteTask/<%= taskDelete._id %>">Sim</a>
+        </div>
+
+    </section>
+
+    <% } %>
+
   </body>
 </html>
