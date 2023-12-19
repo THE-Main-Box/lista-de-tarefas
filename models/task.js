@@ -7,7 +7,6 @@ const taskSchema = new mongoose.Schema({
   },
   check: {
     type: Boolean,
-    require: true,
     default: false,
   },
   date: {
@@ -16,8 +15,7 @@ const taskSchema = new mongoose.Schema({
   },
   edited: {
     type: Boolean,
-    defalult: false,
-    required: true
+    defalult: false
   }
 });
 

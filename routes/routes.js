@@ -9,6 +9,8 @@ routes.get("/getID/:id/:method", Tcontroller.getByID);
 
 routes.post("/update/:id", Tcontroller.updateTask);
 
-routes.get("/deleteTask/:id", Tcontroller.deleteTask)
+routes.get("/deleteTask/:id", Tcontroller.deleteTask);
+
+routes.get("/check/:id", Tcontroller.checkTask)
 
 module.exports = routes;

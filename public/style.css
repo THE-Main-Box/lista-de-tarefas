@@ -1,0 +1,258 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+body {
+  background-color: #202024;
+  color: #fff;
+
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  background-color: #388ec4;
+  padding: 1em;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+header h1 {
+  padding-bottom: 3rem;
+}
+
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 70%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  outline: none;
+  background-color: #202024;
+  color: #fff;
+}
+
+#cancelBtn {
+  margin-top: 0.5rem;
+}
+
+button {
+  padding: 0.6rem;
+  width: fit-content;
+  background-color: #202024;
+  color: #a0a0a0;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+section#tasks {
+  margin: 0.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  padding: 1.5rem;
+  background-color: rgba(83, 83, 87, 0.711);
+  text-decoration: none;
+  font-size: 1.3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+
+ul li p span {
+  color: #ccc;
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+ul li:nth-child(odd) {
+  background-color: #7a7a87b0;
+}
+
+ul li:hover {
+  background-color: #999393;
+}
+
+.deleteI,
+.editI {
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.editI:hover {
+  background-color: green;
+}
+
+.deleteI:hover {
+  background-color: red;
+}
+
+#attButton:hover,
+#addButton:hover {
+  background-color: rgb(19, 214, 5);
+  color: rgb(255, 255, 255);
+}
+
+#cancelBtn:hover {
+  background-color: rgb(255, 38, 0);
+  color: #fff;
+}
+
+section#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+
+  background-color: #00000080;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: auto;
+}
+
+div#card {
+  width: 30rem;
+  position: relative;
+  background-color: #202024;
+}
+
+div#card h2 {
+  padding: 2rem;
+  margin: 0;
+}
+
+div#card a#close {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+div#card a#close:hover {
+  opacity: 70%;
+}
+
+div#card hr {
+  width: 90%;
+  margin: 0 auto;
+  border-color: #ccc;
+}
+
+div#card p {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+div#btns {
+  display: flex;
+  justify-content: center;
+}
+
+div#card a#N,
+div#card a#Y {
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.7rem;
+
+  transition: all 0.5s ease-in-out;
+}
+
+div#card a#N:hover {
+  background-color: red;
+}
+
+div#card a#Y:hover {
+  background-color: green;
+}
+
+section.message {
+  position: absolute;
+  background-color: #202024e4;
+  padding: 0 0.5rem 1.5rem 0;
+  font-size: 2rem;
+}
+
+section.message-success p {
+  color: rgb(41, 196, 41);
+  border: 1px solid green;
+}
+
+section.message-warning p {
+  color: rgb(215, 164, 36);
+  border: 1px solid rgb(255, 166, 0);
+}
+
+#close-message {
+  position: absolute;
+  transition: all 0.5s ease-in;
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+
+#close-message:hover {
+  color: red;
+  cursor: pointer;
+}
+
+ul li.check-true{
+    background-color: #888;
+    color: #f6f6f6;
+    text-decoration: line-through;
+}
+
+ul li a.check-true::before{
+    content: "";
+    position: absolute;
+    border: #fff solid;
+    top: 20px;
+    left: 16px;
+    height: 20px;
+    width: 7px;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+ul li a.check-false::before{
+    content: "";
+    position: absolute;
+    border: #fff solid;
+    top: 20px;
+    left: 16px;
+    height: 15px;
+    width: 15px;
+    border-width:2px;
+}
