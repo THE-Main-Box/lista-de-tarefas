@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 const Conect = () => {
   mongoose
     .connect(
-      "mongodb+srv://curiosidades381:DBofdb@cluster0.on7xl3g.mongodb.net/",
+      "mongodb+srv://curiosidades381:DBofdb@cluster0.on7xl3g.mongodb.net/taskData",
       {}
     )
     .then(() => {
