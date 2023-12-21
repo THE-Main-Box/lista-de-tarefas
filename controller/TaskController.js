@@ -30,6 +30,8 @@ const getAllTasks = async (req, res) => {
 const createTask = async (req, res) => {
   try {
     const task = req.body;
+    req.body.edited = false;
+    req.body.check = false;
 
     if (!task.task) {
       message = "Insira uma Tarefa Antes de Tentar Criar uma...";
